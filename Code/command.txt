@@ -1,1 +1,0 @@
-dasm rez0r.asm -f3 -orez0r.bin
