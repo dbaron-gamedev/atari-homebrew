@@ -67,7 +67,7 @@ zero    STA  $00,X      ;looks familiar, right?
         sta  HOURS      ;just like a VCR, eh? Except it doesn't blink
         lda  #$3C       ;00 minutes
         sta  MINS
-        lda  #$86       ;nice pretty green for our sprites
+        lda  #$1E       ;nice pretty green for our sprites
         sta  COLUP0
         sta  COLUP1
         lda  #$07       ;make them good and fat

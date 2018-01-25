@@ -34,12 +34,12 @@ PreparePlayfield:   ; We'll use the first VBLANK scanline for setup
     sta COLUBK      ; Background color (black)
     sta PF0         ; PF0 and PF2 will be "off" (we'll focus on PF1)...
     sta PF2
-    lda #$FF        ; Playfield collor (yellow-ish)
+    lda #$48        ; Playfield collor (yellow-ish)
     sta COLUPF
-    lda #$00        ; Ensure we will duplicate (and not reflect) PF
+    lda #$01        ; Ensure we will duplicate (and not reflect) PF
     sta CTRLPF
     ldx #0          ; X will count visible scanlines, let's reset it
-    REPEAT 37       ; Wait until this (and the other 36) vertical blank
+    REPEAT 48       ; Wait until this (and the other 36) vertical blank - (I was able to lower the text and center it.)
         sta WSYNC   ; scanlines are finished
     REPEND
     lda #0          ; Vertical blank is done, we can "turn on" the beam
@@ -52,7 +52,9 @@ Scanline:
     lsr             ;   which means Y (bitmap counter) = X (scanline counter) / 2.
     tay             ;   For division by two we use (A-only) right-shift
     lda Phrase,y    ; "Phrase,Y" = mem(Phrase+Y) (Y-th address after Phrase)
-    sta PF1         ; Put the value on PF bits 4-11 (0-3 is PF0, 12-15 is PF2)
+    sta PF0         ; Put the value on PF bits 4-11 (0-3 is PF0, 12-15 is PF2)
+	sta PF1         ; Put the value on PF bits 4-11 (0-3 is PF0, 12-15 is PF2)
+	sta PF2         ; Put the value on PF bits 4-11 (0-3 is PF0, 12-15 is PF2)
 ScanlineEnd:
     sta WSYNC       ; Wait for scanline end
     inx             ; Increase counter; repeat untill we got all kernel scanlines
@@ -68,13 +70,13 @@ Overscan:
     jmp StartFrame  ; ...and start it over!
 
 Phrase:
-    .BYTE %00000000 ; H
+    .BYTE %00000000 ; D
+    .BYTE %01111000
+    .BYTE %01000100
     .BYTE %01000010
-    .BYTE %01111110
     .BYTE %01000010
-    .BYTE %01000010
-    .BYTE %01000010
-    .BYTE %00000000
+    .BYTE %01000100
+    .BYTE %01111000
     .BYTE %00000000 ; E
     .BYTE %01111110
     .BYTE %01000000
@@ -101,9 +103,9 @@ Phrase:
     .BYTE %00000000 ; O
     .BYTE %00000000
     .BYTE %00111100
-    .BYTE %01000010
-    .BYTE %01000010
-    .BYTE %01000010
+    .BYTE %01010010
+    .BYTE %01001010
+    .BYTE %01000110
     .BYTE %01000010
     .BYTE %00111100
     .BYTE %00000000
