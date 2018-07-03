@@ -13,9 +13,8 @@ ECHO.
 
 :BEGIN 
 
-REM "%~dp0..\Compiler\dasm" "%~dp0..\Code\Gyms\*.asm" -f3 -o"%~dp0..\Bin\Gyms\*.bin"
-
 for /f %%f in ('dir /b "%~dp0..\Code\Gyms\"') do "%~dp0..\Compiler\dasm" "%~dp0..\Code\Gyms\%%f" -f3 -o"%~dp0..\Bin\Gyms\%%f.bin"
+for /f %%f in ('dir /b "%~dp0..\Code\Phazer\"') do "%~dp0..\Compiler\dasm" "%~dp0..\Code\Phazer\%%f" -f3 -o"%~dp0..\Bin\Phazer\%%f.bin"
 
 PAUSE
 
