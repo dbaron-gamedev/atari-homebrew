@@ -1,6 +1,6 @@
 # Atari 2600 Homebrew Games
 
-![Atari 2600 Logo](atari2600_logo.png)
+![Atari 2600 Logo](https://github.com/dbaron-gamedev/atari-2600/blob/master/Assets/Images/IDE.jpeg)
 
 ## Overview
 
