@@ -1,7 +1,7 @@
 # Atari 2600 Homebrew Games
 
-![Atari 2600 Logo](https://github.com/dbaron-gamedev/atari-2600/blob/master/Assets/Images/IDE.jpeg)
+![Atari 2600 Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Atari_Official_2012_Logo.svg/436px-Atari_Official_2012_Logo.svg.png)
 
 ## Overview
 
-This repo includes assembly source code of my various Atari 2600 projects.
+This repo includes the assembly source code of my various Atari 2600 homebrew projects.
