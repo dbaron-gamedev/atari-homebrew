@@ -1,6 +1,6 @@
 # Atari 2600 Homebrew Games
 
-![Atari 2600 Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Atari_Official_2012_Logo.svg/436px-Atari_Official_2012_Logo.svg.png)
+![Atari 2600 Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Atari_Official_2012_Logo.svg/218px-Atari_Official_2012_Logo.svg.png)
 
 ## Overview
 
